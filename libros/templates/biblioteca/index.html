@@ -1,1 +1,5 @@
-<h1>Pagina de Inicio en Django</h1>
+<h1>Listado de Libros</h1>
+
+{% for book in books %}
+  <p>{{ book }}</p>
+{% endfor %}
