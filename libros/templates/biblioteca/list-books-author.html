@@ -1,12 +1,16 @@
-<h1>Libros</h1>
+{% extends 'layout.html' %}
 
-{% for book in books %}
-  <p>
-    <strong>{{ book.title }}</strong> ({{ book.year }})<br>
-    <small>Autor:</small> {{ book.author.name }}
-  </p>
-{% endfor %}
+{% block content %}
+  <h1>Libros</h1>
 
-<a href="{% url 'biblioteca_app:list-authors' %}">
-  Mostrar todos los autores
-</a>
+  {% for book in books %}
+    <p>
+      <strong>{{ book.title }}</strong> ({{ book.id }})<br>
+      <small>Autor:</small> {{ book.author.name }}
+    </p>
+  {% endfor %}
+
+  <a class="btn btn-dark" href="{% url 'biblioteca_app:list-authors' %}">
+    Mostrar todos los autores
+  </a>
+{% endblock %}

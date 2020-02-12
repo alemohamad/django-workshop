@@ -1,8 +1,12 @@
-<h1>Listado de Autores</h1>
+{% extends 'layout.html' %}
 
-{% for author in authors %}
-  <p>
-    {{ author.name }}<br>
-    <a href="{% url 'biblioteca_app:list-books-author' author.id %}">Ver libros</a>
-  </p>
-{% endfor %}
+{% block content %}
+  <h1>Listado de Autores</h1>
+
+  {% for author in authors %}
+    <p>
+      {{ author.name }}<br>
+      <a class="btn btn-dark btn-sm" href="{% url 'biblioteca_app:list-books-author' author.id %}">Ver libros</a>
+    </p>
+  {% endfor %}
+{% endblock %}
