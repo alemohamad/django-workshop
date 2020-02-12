@@ -1,5 +1,8 @@
-<h1>Listado de Libros</h1>
+<h1>Listado de Autores</h1>
 
-{% for book in books %}
-  <p>{{ book }}</p>
+{% for author in authors %}
+  <p>
+    {{ author.name }}<br>
+    <a href="{% url 'biblioteca_app:list-books-author' author.id %}">Ver libros</a>
+  </p>
 {% endfor %}

@@ -1,0 +1,12 @@
+<h1>Libros</h1>
+
+{% for book in books %}
+  <p>
+    <strong>{{ book.title }}</strong> ({{ book.year }})<br>
+    <small>Autor:</small> {{ book.author.name }}
+  </p>
+{% endfor %}
+
+<a href="{% url 'biblioteca_app:list-authors' %}">
+  Mostrar todos los autores
+</a>
